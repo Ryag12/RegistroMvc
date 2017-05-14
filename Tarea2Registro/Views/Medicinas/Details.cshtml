@@ -1,0 +1,50 @@
+﻿@model Tarea2Registro.Models.Medicinas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Medicinas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreMedicina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreMedicina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadExistencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadExistencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaVencimiento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MedicinaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

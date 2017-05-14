@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Tarea2Registro.Models.Medicinas>
+
+@{
+    ViewBag.Title = "Consultas";
+}
+
+<h2>Consulta Medicamentos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreMedicina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadExistencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioCompra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreMedicina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadExistencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioCompra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaVencimiento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.MedicinaId }) |
+            @Html.ActionLink("Detalle", "Detalle", new { id=item.MedicinaId }) |
+            @Html.ActionLink("Elimar", "Eliminar", new { id=item.MedicinaId })
+        </td>
+    </tr>
+}
+
+</table>
